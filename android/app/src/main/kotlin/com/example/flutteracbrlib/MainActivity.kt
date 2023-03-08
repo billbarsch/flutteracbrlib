@@ -1,4 +1,4 @@
-package com.example.acbrlib
+package com.example.flutteracbrlib
 
 import io.flutter.embedding.android.FlutterActivity
 

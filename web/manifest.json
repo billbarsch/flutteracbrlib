@@ -1,6 +1,6 @@
 {
-    "name": "acbrlib",
-    "short_name": "acbrlib",
+    "name": "flutteracbrlib",
+    "short_name": "flutteracbrlib",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

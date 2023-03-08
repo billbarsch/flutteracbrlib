@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.acbrlib">
+    package="com.example.flutteracbrlib">
    <application
-        android:label="acbrlib"
+        android:label="flutteracbrlib"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
