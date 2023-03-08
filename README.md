@@ -2,11 +2,6 @@
 
 Projeto flutter para mostrar uso da DLL AcbrNfe
 
-## Getting Started
-
-Copie a Dll para a pasta assets
-
-
 ## Exemplo
 
 ```
@@ -20,13 +15,28 @@ void main() {
 
 ## Executar a aplicação
 
+
+### Modo Debug
+
 ``` 
 flutter run -d windows
 ```
+  - Copie a Dll para a pasta /assets para testar em modo debug
 
+### Modo Release
+
+``` 
+flutter build windows
+```
+  - Copie a Dll para a pasta /build/windows/runner/Release para executar em modo release
 
 ## Teste
 
 ``` 
 flutter test ../test/acbrnfe_test.dart
 ```
+
+### Obervações
+
+A dll usada é a ACBrNFe64.dll e está rodando no windows, em breve iremos testar no linux e estudar a possibilidade de android
+
