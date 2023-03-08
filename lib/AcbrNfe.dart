@@ -1,6 +1,7 @@
 import 'dart:ffi';
 import 'dart:io';
 import 'package:ffi/ffi.dart';
+import 'package:flutter/foundation.dart';
 
 class ACBrNFe {
   static const BUFFER_LEN = 1024; // Defina o tamanho máximo do buffer aqui
@@ -62,7 +63,13 @@ class ACBrNFe {
   int Function(Pointer<Utf8>)? _nfeImprimirInutilizacaoPDF;
 
   ACBrNFe({this.arqConfig = '', this.chaveCrypt = ''}) {
-    _acbrLibNFe = DynamicLibrary.open(Directory.current.path + '/assets/ACBrNFe64.dll');
+    if (kDebugMode) {
+      //modo debug
+      _acbrLibNFe = DynamicLibrary.open(Directory.current.path + '/assets/ACBrNFe64.dll'); //dll na pasta assets
+    } else {
+      //modo release
+      _acbrLibNFe = DynamicLibrary.open('ACBrNFe64.dll'); //dll na mesma pasta do .exe
+    }
 
     _nfeInicializar = _acbrLibNFe!
         .lookup<NativeFunction<Int32 Function(Pointer<Utf8>, Pointer<Utf8>)>>('NFE_Inicializar')
@@ -203,6 +210,10 @@ class ACBrNFe {
         .asFunction();
 
     _nfeInicializar!(arqConfig.toNativeUtf8(), chaveCrypt.toNativeUtf8());
+  }
+
+  void finalizar() {
+    _nfeFinalizar!();
   }
 
   String nome() {

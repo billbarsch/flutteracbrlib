@@ -9,7 +9,7 @@
 .history
 .svn/
 migrate_working_dir/
-assets/ACBrNFe64.dll
+ACBrNFe64.dll
 
 # IntelliJ related
 *.iml
